@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrift By Shaifil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f1f1; /* Light background for a clean look */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #BDB76B ;
+            color: #2F4F4F;
+            text-align: center;
+            padding: 80px 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+        }
+
+        nav {
+            background-color: #D2691E;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #696969; /* Modern hover color */
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        section {
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-10px); /* Subtle hover effect for section */
+        }
+
+        .row {
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .row div {
+            flex: 1;
+            background-color: #D2B48C;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .row div:hover {
+            transform: translateY(-5px); /* Hover effect on individual sections */
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .product {
+            background-color: #B2BEB5;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product img {
+            width: 100%;
+            height: 50%;
+            border-radius: 12px;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #A9A9A9;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #6082B6; /* Darker blue on hover */
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li a {
+            color: #1E90FF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        ul li a:hover {
+            color: #4682B4;
+        }
+        .product-image{
+            width:200px;
+            height:200px;
+            object-fit:cover;
+            border-radius:8px;
+            margin-right:30px;
+            }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Thrift By Shaifil</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <h2>Welcome to Thrift Store!</h2>
+            <p>Your one-stop shop for the latest fashion trends. We offer stylish, comfortable, and affordable clothing for men and women of all ages.</p>
+
+            <div class="row">
+                <div>
+                    <h3>Featured Collections</h3>
+                    <p>Discover our seasonal collections that combine comfort, style, and quality. These pieces are perfect for any wardrobe!</p>
+                    <a href="#products" class="btn">Shop Now</a>
+                </div>
+                <div>
+                    <h3>New Arrivals</h3>
+                    <p>Check out our newest arrivals! Fresh, trendy, and ready to be styled.</p>
+                    <a href="#products" class="btn">Browse New Arrivals</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products">
+            <h2>Our Product Range</h2>
+            <p>Explore our diverse range of clothing for men and women. From elegant dresses to comfy loungewear, we offer something for everyone.</p>
+
+            <div class="product-grid">
+                <div class="product">
+                    <img src="1.jpg" alt="Product 1">
+                    <h3>Casual T-Shirt</h3>
+                    <p>$29.99</p>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+                <div class="product">
+                    <img src="2.jpg" alt="Product 2">
+                    <h3>Elegant Dress</h3>
+                    <p>$79.99</p>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+                <div class="product">
+                    <img src="3.jpg" alt="Product 3">
+                    <h3>Stylish Jacket</h3>
+                    <p>$99.99</p>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+                <div class="product">
+                    <img src="4.jpg" alt="Product 1">
+                    <h3>Cap with Contrast Embroidery</h3>
+                    <p>$69.99</p>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+                <div class="product">
+                    <img src="5.jpg" alt="Product 2">
+                    <h3>casual Jacket</h3>
+                    <p>$149.99</p>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+                <div class="product">
+                    <img src="6.jpg" alt="Product 3">
+                    <h3>Mens Trendy Clothing Set </h3>
+                    <p>$299.99</p>
+                    <a href="#" class="btn">Add to Cart</a>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Founded in 2025, Thrift By Shaifil aims to provide the latest fashion trends and timeless pieces. We are committed to offering high-quality, stylish clothing that fits every occasion.</p>
+
+            <h3>Our Mission</h3>
+            <p>We strive to offer accessible fashion that empowers individuals to express their unique personality through clothing. Our mission is to provide high-quality, stylish, and affordable clothing that can be worn for any occasion.</p>
+
+            <h3>Why Choose Us?</h3>
+            <ul>
+                <li>Trendy designs</li>
+                <li>Affordable pricing</li>
+                <li>High-quality fabrics</li>
+                <li>Fast shipping</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to reach out. We are here to help you!</p>
+
+            <h3>Email</h3>
+            <p>You can email us at: 
+                <a href="mailto:support@thriftbyshaifil.com">support@thriftbyshaifil.com</a>
+            </p>
+
+            <h3>Phone</h3>
+            <p>Call us at: +91 7016466586</p>
+
+            <h3>Social Media</h3>
+            <p>Follow us on our social media channels for updates, discounts, and new arrivals:</p>
+            <ul>
+                <li><a href="https://facebook.com">Facebook</a></li>
+                <li><a href="https://instagram.com">Instagram</a></li>
+                <li><a href="https://twitter.com">Twitter</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Thrift By Shaifil. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
